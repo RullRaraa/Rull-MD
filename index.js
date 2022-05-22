@@ -183,7 +183,7 @@ module.exports = chika = async (chika, m, chatUpdate, store) => {
         if (db.data.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
         reply(`「 ANTI LINK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
-        if (!isBotAdmins) return reply(`Ehh bot gak admin T_T`)
+        if (!isBotAdmins) return reply(`Ehh bot gak admin :V`)
         let gclink = (`https://chat.whatsapp.com/`+await chika.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
@@ -749,7 +749,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
             let jodoh = member[Math.floor(Math.random() * member.length)]
-            let jawab = `Ciee yang Jadian💖 Jangan lupa pajak jadiannya🐤
+            let jawab = `Ciee yang Jadian💖 Jangan lupa pajak jadiannya✨
 
 @${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
             let menst = [orang, jodoh]
@@ -768,7 +768,7 @@ chika.sendMessage(from, { text: `Pertanyaan : Apakah ${q}\nJawaban : ${kah}` }, 
 					break
 case 'bisakah':
 				if (!q) return reply(`Penggunaan ${command} text\n\nContoh : ${command} saya wibu`)
-					const bisa = ['Bisa','Gak Bisa','Gak Bisa Ajg Aaokawpk','TENTU PASTI KAMU BISA!!!!']
+					const bisa = ['Bisa','Gak Bisa','Gak Bisa Ajg Aaokaowkwowk','TENTU PASTI KAMU BISA!!!!']
 					const ga = bisa[Math.floor(Math.random() * bisa.length)]
 chika.sendMessage(from, { text: `Pertanyaan : ${q}\nJawaban : ${ga}` }, { quoted: m })
 
@@ -1633,7 +1633,7 @@ break
                 let buttonMessage = {
                     image: { url: images },
                     caption: `*-------「 GIMAGE SEARCH 」-------*
-🤠 *Query* : ${text}
+✨ *Query* : ${text}
 🔗 *Media Url* : ${images}`,
                     footer: ownername,
                     buttons: buttons,
@@ -1675,7 +1675,7 @@ break
             break
 	    case 'ytmp3': case 'ytaudio': {
                 let { yta } = require('./lib/y2mate')
-                if (!q) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
+                if (!q) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccab%27 128kbps`)
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 100000) return reply('File Melebihi Batas '+util.format(media))
@@ -1685,7 +1685,7 @@ break
             break
             case 'ytmp4': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
-                if (!q) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`)
+                if (!q) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccab%27 360p`)
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return reply('File Melebihi Batas '+util.format(media))
@@ -1923,7 +1923,7 @@ case 'webtonsearch': case 'webtoon':
             }
             break
 	    case 'nomerhoki': case 'nomorhoki': {
-                if (!Number(text)) reply(`Example : ${prefix + command} 6288292024190`)
+                if (!Number(text)) reply(`Example : ${prefix + command} 6285859047172`)
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return reply(anu.message)
                 chika.sendText(m.chat, `⭔ *Nomor HP :* ${anu.message.nomer_hp}\n⭔ *Angka Shuzi :* ${anu.message.angka_shuzi}\n⭔ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n⭔ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
@@ -2496,7 +2496,7 @@ break
                     reply(`ID : ${anu.result.gameId}\nZone : ${anu.result.zoneId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'aov') {
-                    if (!id) throw `No Query id, Example ${prefix + command} aov 293306941441181`
+                    if (!id) throw `No Query id, Example ${prefix + command} aov 293306941445581`
                     let anu = await fetchJson(api('zenz', '/api/nickaov', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
                     if (anu.status == false) return reply(anu.result.message)
                     reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
@@ -3118,7 +3118,7 @@ break
 case 'owner': case 'creator': {
 chika.sendContact(m.chat, global.owner, m)
 const templateMessage = {
-text: 'Tuh Kak Owner Ku',footer: `© ${ownername}`,
+text: 'Tuh Kak Owner Ku :)',footer: `© ${ownername}`,
 templateButtons: [
 {
 index: 1, 
